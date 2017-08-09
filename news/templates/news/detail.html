@@ -1,0 +1,12 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'news/style.css' %}" />
+
+<div>
+<h1>{{ news.title }}</h1>
+<p>{{ news.content }}</p>
+<div class="form-row">
+    <div class="small-12 columns">
+        <textarea name="text-area" id="rmessage_4787763" rows="6" cols="58" placeholder="Your Comment"></textarea>
+    </div>
+</div>
