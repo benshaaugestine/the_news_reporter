@@ -1,9 +1,30 @@
 li a {
-    color: green;
+    font-family: "Times New Roman", Georgia, Serif;
 }
-h1 {
-    color: red;
+ul {
+    list-style-type:none;
+}
+.news_headings {
+    color: black;
+}
+li h2 a{
+    color:#004D40;
     }
-body {
-    background: white url("image/background.gif") no-repeat right top;
+li h4 a {
+    color:#004D40;
+    }
+h1 {
+    color: #F1F8E9;
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size:80px;
+    }
+p {
+    font-family: "Times New Roman", Georgia, Serif;
 }
+.head {
+    background: #00796B;
+
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+

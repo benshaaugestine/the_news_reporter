@@ -1,12 +1,32 @@
-{% load static %}
+{% extends "news/base.html" %}
+            {% block content %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'news/style.css' %}" />
-{% if latest_news_list %}
-    <ul>
-    {% for n in latest_news_list %}
-        <li><a href="{% url 'news:detail' n.id %}">{{ n.title }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No news are available.</p>
-{% endif %}
+            <div class="row">
+                 <div class="col-md-10">
+            {% if latest_news_list %}
+            <ul >
+                {% for n in latest_news_list %}
+                    <div class="news_headings">
+                        <li><h2><a href="{% url 'news:detail' n.id %}">{{ n.title }}</a></h2></li>
+                        <p>{{n.content|truncatechars_html:200}} <a href="{% url 'news:detail' n.id %}">more</a></p>
+                    </div>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No news are available.</p>
+        {% endif %}
+                 </div>
+
+                <div class="col-md-2">
+        {% if category_list %}
+            <ul>
+                {% for i in category_list%}
+                <li><h4><a href="{% url 'news:category' i.id %} ">{{i.category_name}}</a></h4></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No categories are available.</p>
+        {% endif %}
+        </div>
+            </div>
+            {% endblock %}
