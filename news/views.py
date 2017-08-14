@@ -1,10 +1,12 @@
 from django.views import generic
+from django.views.generic import FormView
+
 from .models import News,Category
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 
-from news.forms import SignUpForm
+from news.forms import SignUpForm,SettingsForm
 
 def signup(request):
     if request.method == 'POST':
@@ -19,6 +21,24 @@ def signup(request):
     else:
         form = SignUpForm()
     return render(request, 'news/signup.html', {'form': form})
+
+
+class UpdateView(FormView):
+    template_name = 'news/updateprofile.html'
+    form_class = SettingsForm
+    success_url = '/'
+
+    def form_valid(self,form):
+        form = form.cleaned_data
+        ret = super(UpdateView,self).form_valid(form)
+        if(ret):
+            self.request.user.first_name = form['first_name']
+            self.request.user.last_name = form['last_name']
+            self.request.user.email = form['email']
+            self.request.user.save()
+        return ret
+
+
 
 
 class IndexView(generic.ListView):
