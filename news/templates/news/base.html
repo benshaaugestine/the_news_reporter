@@ -25,11 +25,24 @@
     <body>
         <div class="container_fluid">
         <div class="head">
-            <h1>The News Reporter</h1>
+             <div class="row">
+               <div class="col-md-8">
+                   <h1>The News Reporter</h1></div>
+
+
+        <div class="col-md-4 col-md-offset-8">
+            <form action="{% url 'news:search_result' %}" method="get" class="search-form">
+                <div class="form-group has-feedback">
+            		<label for="searchitem" class="sr-only">Search</label>
+            		<input type="text" class="form-control" name="searchitem" id="searchitem" placeholder="search">
+              		<span class="glyphicon glyphicon-search form-control-feedback"></span>
+            	</div>
+            </form>
         </div>
+    </div>
+</div>
 
-
-
+        </div>
             <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="158">
                 <div class="container-fluid">
                 <div class="navbar-header">
@@ -48,15 +61,15 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
-                    <li><a href="{% url 'news:profile' %}">Hi {{ user.username }}!</a></li>
-                    <li><a href="{% url 'news:logout' %}">logout</a>  </li>
+                    <li><a href="{% url 'profile' %}">Hi {{ user.username }}!</a></li>
+                    <li><a href="{% url 'logout' %}">logout</a>  </li>
 
 
                         {% else %}
 
 
-                    <li><a href="{% url 'news:signup' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="{% url 'news:login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><a href="{% url 'signup' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 {% endif%}
                 </ul>
             </div>

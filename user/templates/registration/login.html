@@ -11,13 +11,13 @@
         <fieldset>
 
         <!-- Form Name -->
-        <legend><a href="{% url 'news:signup' %}">Create a new account?</a></legend>
+        <legend><a href="{% url 'signup' %}">Create a new account?</a></legend>
 
       <!-- Text input-->
     <div class="form-group">
         {% if user.is_authenticated %}
                 <h2> Hi {{ user.username }}! </h2>
-                    <h3><a href="{% url 'news:logout' %}">logout</a></h3>
+                    <h3><a href="{% url 'logout' %}">logout</a></h3>
             {% else %}
                     <h3> </h3>
         {% endif %}
@@ -31,7 +31,7 @@
       </div>
     </fieldset>
 
-            <p><a href="{% url 'news:password_reset' %}">Forgit Password?</a></p>
+            <p><a href="{% url 'password_reset' %}">Forgit Password?</a></p>
 
 </div> <!--./row -->
 </div> <!--./container -->

@@ -1,0 +1,6 @@
+{% extends "news/base.html" %}
+{% block content %}
+{% for n in news %}
+    {{n.title}}
+{% endfor %}
+{% endblock %}
