@@ -1,7 +1,7 @@
 .page-header {
     border-bottom: 1px solid #000000;
-    margin: 20px 0;
-    padding-bottom: 9px;
+    margin: 0px;
+    padding-bottom: 0px;
     text-align: center;
 
 }
@@ -10,7 +10,9 @@ font-family: "Times New Roman", Georgia, Serif;
     font-size:40px;
     color: #004D40;
 }
-
+.grp {
+         margin: 10px 0;
+    }
 
 body {
     background-color: #000000;
@@ -22,12 +24,10 @@ body {
     font-family: "Times New Roman", Georgia, Serif;
     font-size:20px;
     padding: 20px 50px 20px 50px;
-    margin: 0px 250px;
+    margin: 0px 270px 100px 270px;
     color: #004D40;
 }
-.tag2 {
-    margin: 0px 100px;
-}
+
 legend {
 
     border: medium none;
@@ -35,7 +35,7 @@ legend {
     display: block;
     font-size: 20px;
     line-height: inherit;
-    margin: 15px;
+    margin: 15px 10px 15px 5px;
     padding: 0;
     text-align: center;
     width: 100%;
@@ -51,6 +51,23 @@ legend {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 15px 2px 0px 2px;
     cursor: pointer;
+
+}
+form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+label, input ,grps {
+    /* in order to define widths */
+    display: inline-block;
+    margin: 5px 0px;
+}
+.grps {
+    margin:5px;}
+input + input {
+    float: right;
 }

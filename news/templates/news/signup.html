@@ -1,42 +1,41 @@
 {% extends "news/base.html" %}
 {% load static %}
 {% block content %}
-<html>
-  <head><link rel="stylesheet" href="{% static 'news/loginstyle.css' %}"></head>
-  <body>
-        <div class="container">
-        <div class="row">
+<link rel="stylesheet" href="{% static 'news/loginstyle.css' %}">
+<div class="container">
+    <div class="row">
         <div class="page-header"><h2>Sign-up</h2></div>
 
         <fieldset>
 
-        <!-- Form Name -->
-        <legend><a href="{% url 'news:login' %}">Already have an account?</a></legend>
+            <!-- Form Name -->
+            <legend><a href="{% url 'news:login' %}">Already have an account?</a></legend>
 
-      <!-- Text input-->
-    <div class="form-group">
-       <form class="form-horizontal" method="post" >
-    {% csrf_token %}
-    {% for field in form %}
-         <div class="row">
-      <div class="tag1 col-md-2">
-           {{ field.label_tag }}</div>
-         <div class="tag2 col-md-10">{{ field }}</div>
-         </div>
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
+            <!-- Text input-->
+            <div class="form-group">
+                <form class="form-horizontal" method="post" >
+                    {% csrf_token %}
+                    {% for field in form %}
 
-    {% endfor %}
-    <button type="submit" class="button">Sign up</button>
-  </form>
-      </div>
-    </fieldset>
+                    <div class="tag1 col-md-4">
+                        {{ field.label_tag }}</div>
+                    <div class="tag2 col-md-6">{{ field }}</div>
 
-</div> <!--./row -->
+                    {% for error in field.errors %}
+                    <p style="color: red">{{ error }}</p>
+                    {% endfor %}
+
+                    {% endfor %}
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-block button">Sign up</button></div>
+                </form>
+            </div>
+        </fieldset>
+
+    </div> <!--./row -->
 </div> <!--./container -->
-  </body>
-</html>
+
+
 {% endblock %}
 
 

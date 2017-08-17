@@ -48,7 +48,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
-                    <li><a href="#">Hi {{ user.username }}!</a></li>
+                    <li><a href="{% url 'news:profile' %}">Hi {{ user.username }}!</a></li>
                     <li><a href="{% url 'news:logout' %}">logout</a>  </li>
 
 

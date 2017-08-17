@@ -1,12 +1,17 @@
+
 from django.views import generic
 from django.views.generic import FormView
 
 from .models import News,Category
 from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
+from django.contrib.auth import update_session_auth_hash
 
-from news.forms import SignUpForm,SettingsForm
+
+
+
+
+from news.forms import SignUpForm,SettingsForm,PasswordForm
 
 def signup(request):
     if request.method == 'POST':
@@ -64,6 +69,28 @@ class DetailView(generic.DetailView):
 class CategoryView(generic.DetailView):
     model=Category
     template_name='news/category.html'
+
+
+
+
+class UpdatePasswordView(FormView):
+    template_name = 'news/update_password.html'
+    form_class = PasswordForm
+    success_url = '/'
+
+    def form_valid(self,form):
+        data = super(UpdatePasswordView,self).form_valid(form)
+        form = form.cleaned_data
+        if(form['password'] == form['password_confirm']):
+            self.request.user.set_password(form['password'])
+            self.request.user.save()
+            update_session_auth_hash(self.request, self.request.user)
+            login(self.request, self.request.user)
+
+        return data
+
+
+
 
 
 

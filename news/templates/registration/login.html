@@ -22,12 +22,16 @@
                     <h3> </h3>
         {% endif %}
         <form method="post">
+
             {% csrf_token %}
-            {{ form.as_p }}
+            <div class="grps">
+                {{ form.as_p }}</div>
             <button type="submit" class="button">Login</button>
         </form>
       </div>
     </fieldset>
+
+            <p><a href="{% url 'news:password_reset' %}">Forgit Password?</a></p>
 
 </div> <!--./row -->
 </div> <!--./container -->
