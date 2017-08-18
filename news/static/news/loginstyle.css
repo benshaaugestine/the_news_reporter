@@ -13,20 +13,17 @@ font-family: "Times New Roman", Georgia, Serif;
 .grp {
          margin: 10px 0;
     }
+/*
 
-body {
-    background-color: #000000;
 
-}
-
-.row {
+.rw {
     background: #ffffff;
     font-family: "Times New Roman", Georgia, Serif;
     font-size:20px;
     padding: 20px 50px 20px 50px;
     margin: 0px 270px 100px 270px;
     color: #004D40;
-}
+} */
 
 legend {
 
@@ -55,19 +52,17 @@ legend {
     cursor: pointer;
 
 }
-form {
-    width: 80%;
-    margin: 0 auto;
-}
 
 
-label, input ,grps {
-    /* in order to define widths */
+
+/* label, input ,grps {
+    /* in order to define widths
     display: inline-block;
     margin: 5px 0px;
-}
+} */
 .grps {
     margin:5px;}
+
 input + input {
     float: right;
 }

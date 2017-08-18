@@ -1,0 +1,29 @@
+{% extends "news/base.html" %}
+
+{% block content %}
+<h2>Subscribe to receive our Newsletter.</h2>
+<div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+  <ul>
+        {% if msg %}
+            {% autoescape off %}{{ msg }} {% endautoescape %}
+        {% else %}
+        <form method="post">
+            {% csrf_token  %}
+            <div class="input-append newsletter-box text-center">
+                <input type="email" name="email" class="full text-center" placeholder="Email">
+                <button class="btn  bg-gray" type="submit"> Subscribe Us <i class="fa fa-long-arrow-right"> </i> </button>
+            </div>
+        </form>
+      {% endif %}
+  </ul>
+  <ul>
+      {% if sub_fail %}
+            <div class='alert alert-danger '><b>{% autoescape off %} {{ sub_fail }} {% endautoescape %}</b> </div>
+      {% endif %}
+      {% if sub_pass %}
+            <div class='alert alert-success  '><b>{% autoescape off %} {{ sub_pass }} {% endautoescape %}</b> </div>
+      {% endif %}
+  </ul>
+</div>
+
+{% endblock %}

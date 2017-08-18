@@ -1,6 +1,20 @@
 {% extends "news/base.html" %}
 {% block content %}
-{% for n in news %}
-    {{n.title}}
-{% endfor %}
+
+<div class="row">
+    <div class="col-md-10">
+        {% if news %}
+            <ul >
+                {% for n in news %}
+                    <div class="news_headings">
+                        <li><h2><a href="{% url 'news:detail' n.id %}">{{ n.title }}</a></h2></li>
+                        <p>{{n.content|truncatechars_html:200}} <a href="{% url 'news:detail' n.id %}">more</a></p>
+                    </div>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No news are available.</p>
+        {% endif %}
+                 </div>
+</div>
 {% endblock %}
