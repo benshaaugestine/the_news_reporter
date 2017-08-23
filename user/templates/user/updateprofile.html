@@ -1,13 +1,29 @@
-{% extends 'news/base.html' %}
+{% extends "news/home.html" %}
 {% load static %}
+{% block banner %}
+{% endblock %}
 {% block content %}
-  <head><link rel="stylesheet" href="{% static 'news/loginstyle.css' %}"></head>
-  <body>
-        <div class="container">
-        <div class="row">
-        <div class="page-header"><h2>Profile</h2></div>
-        <form method="post">
-        <br>
+<head>
+    <style>
+        #signup .button {
+                    margin: 0px 0px 10px 0px;
+
+            }
+
+            #signup input {
+                    margin:0px 0 14px 0;
+                          }
+
+    </style>
+</head>
+<body>
+    <foo id="signup">
+<div class="ba">
+    <div class="news_headings"><h3>Profile</h3></div>
+
+    <div class="row">
+    <div class="col-md-4 news_headings form">
+        <form action="#" method="post">
             {% csrf_token %}
 
 
@@ -18,9 +34,8 @@
             <label for="id_last_name">Last name:</label>
 
             <input type="text" name="last_name" id="id_last_name"
-                   value="{{ request.user.last_name }}"  maxlength="30" /></br>
-            <label for="id_email">Email:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-
+                   value="{{ request.user.last_name }}"  maxlength="30" />
+            <label for="id_email">Email:</label>
             <input type="email" name="email" id="id_email"
                    value="{{ request.user.email }}" required maxlength="254" />
           {% for field in form %}
@@ -29,11 +44,18 @@
             {% endfor %}
           {% endfor %}
 
-          <button class="btn btn-block button" type="submit"> Save </button>
-        </fieldset>
-      </form>
-</div>
+          <div class="news_headings">
+            <button type="submit" class="btn btn-block button">Submit</button></div>
+
+        </form>
+            </div>
+             <div class="col-md-6">
+          <!--  <img src="{% static 'news/images/sig.jpg' %}" alt="Pic 01" width="500"/>-->
         </div>
+    </div>
+            </div>
+</foo>
+{% endblock %}
+{% block footer %}
 
 {% endblock %}
-  </body>

@@ -15,11 +15,18 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
+from django.contrib.flatpages.views import flatpage
+
+# Your other patterns here
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^',include('news.urls')),
     url(r'^user/',include('user.urls')),
-    url(r'^widgets/',include('widgets.urls'))
+    url(r'^widgets/',include('widgets.urls')),
+    url(r'^pages/', include('django.contrib.flatpages.urls',)),
+    url(r'^comments/', include('django_comments.urls')),
+    url(r'^accounts/', include('allauth.urls'))
+
 
 ]

@@ -1,20 +1,43 @@
-{% extends 'news/base.html' %}
-
-{% block content %}
-<div class="container">
-    <br /><br />
-  <div class="row col-sm-offset-3 col-sm-6">
-
-  <h3>Forgot password</h3>
-      <form method="post">
-        <fieldset>
-          {% csrf_token %}
-          {{ form }}
-          <button type="submit">Submit</button>
-        </fieldset>
-      </form>
-    </div>
-</div>
+{% extends "news/home.html" %}
+{% load static %}
+{% block banner %}
 {% endblock %}
+{% block content %}
+<head>
+    <style>
+        .form {
+                    margin: 50px 300px 300px 300px;
 
+            }
+
+            .form input {
+                    margin:10px 0 0 0;
+                          }
+
+    </style>
+
+        <footer id="footer">
+				<div class="inner">
+
+					<div class="news_headings"><h3>Contact Us</h3></div>
+                    <div class="news_headings form">
+					<form action="#" method="post">
+						{% csrf_token %}
+
+                            {{ form }}
+                              <ul class="actions">
+							<li><input value="Submit" class="button alt" type="submit"></li>
+						</ul>
+                    </form></div>
+
+					<div class="copyright">
+						&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
+					</div>
+
+				</div>
+			</footer>
+	{% endblock %}
+{% block footer %}
+
+{% endblock %}
 

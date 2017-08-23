@@ -1,10 +1,13 @@
 from django.views.generic.edit import FormView
 from .models import Subscribers
-from .forms import SubscribersForm
+from .forms import SubscribersForm, ContactForm
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.utils.crypto import get_random_string
 from django.views import View
+from django.shortcuts import render, redirect
+from django.views import generic
+from news.models import News
 
 
 
@@ -85,4 +88,19 @@ class ActivateSubscription(View):
             return render(request, 'widgets/subscribe.html',{'sub_fail': "Subscription Failed. Please Try Again!"})
 
 
+def contactView(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    else:
+        form = ContactForm()
+    return render(request, 'widgets/contact.html', {'form': form})
+
+
+class CommentsView(generic.DetailView):
+    template_name = 'widgets/rend.html'
+    model = News
+    context_object_name = 'news'
 

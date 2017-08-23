@@ -10,6 +10,8 @@ urlpatterns = [
     url(r'^setpassword/', views.UpdatePasswordView.as_view(), name='set_password'),
 
 
+    url(r'^oauth/', include('social_django.urls', namespace='social')),
+
     url(r'^password_reset/$', auth_views.password_reset,
         {'template_name': 'registration/pswd_reset_form.html'}, name='password_reset'),
 

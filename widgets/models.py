@@ -39,3 +39,14 @@ def list_of_subscribers():
     ls = Subscribers.objects.all()
     return [n for n in ls]
 
+
+
+class Contact(models.Model) :
+    name=models.CharField(max_length=40)
+    email=models.EmailField()
+    message=models.CharField(max_length=300)
+
+    def __str__(self):
+        return self.name
+
+

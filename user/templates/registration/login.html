@@ -1,45 +1,73 @@
-{% extends "news/base.html" %}
+{% extends "news/home.html" %}
 {% load static %}
+{% block banner %}
+{% endblock %}
 {% block content %}
-<html>
-  <head><link rel="stylesheet" href="{% static 'news/loginstyle.css' %}"></head>
-  <body>
+<head>
+    <style>
+        #signup .button {
+                    margin: 0px 0px 10px 0px;
 
-        <div class="container">
-        <div class="row rw">
-        <div class="page-header"><h2>Login Form</h2></div>
+            }
 
-        <fieldset>
+            #signup input {
+                    margin:0px 0 0 0;
+                          }
 
-        <!-- Form Name -->
-        <legend><a href="{% url 'signup' %}">Create a new account?</a></legend>
+    </style>
+</head>
+<body>
+    <foo id="signup">
 
-      <!-- Text input-->
-    <div class="form-group">
-        {% if user.is_authenticated %}
-                <h2> Hi {{ user.username }}! </h2>
-                    <h3><a href="{% url 'logout' %}">logout</a></h3>
-            {% else %}
-                    <h3> </h3>
-        {% endif %}
-        <form method="post">
+    <div class="ba">
+    <div class="news_headings"><h3>Login</h3></div>
+
+    <div class="row">
+    <div class="col-md-4 news_headings form">
+        <form action="#" method="post">
 
             {% csrf_token %}
-            <div class="grps">
-                {{ form.as_p }}</div>
-            <button type="submit" class="button">Login</button>
+
+                {{ form.as_p }}
+             <div class="news_headings">
+                 <button type="submit" class="btn btn-block button">Login</button></div>
+
         </form>
-      </div>
-    </fieldset>
+             <p><a href="{% url 'password_reset' %}">Forgot Password?</a></p>
+                 <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+            </div>
 
-            <p><a href="{% url 'password_reset' %}">Forgit Password?</a></p>
+          <div class="col-md-6">
+          <!--  <img src="{% static 'news/images/sig.jpg' %}" alt="Pic 01" width="500"/>-->
+        </div>
 
-</div> <!--./row -->
-</div> <!--./container -->
 
-  </body>
-</html>
+
+    </div>
+        </div>
+</foo>
+    </body>
 {% endblock %}
+{% block footer %}
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
