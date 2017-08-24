@@ -51,10 +51,14 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google'
 
+<<<<<<< HEAD
 
 
 ]
 INSTALLED_APPS += ['django_social_share']
+=======
+]
+>>>>>>> c5096056dabd440f0226e27b475a214e02beef9b
 
 
 MIDDLEWARE = [
