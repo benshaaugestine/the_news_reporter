@@ -1,5 +1,5 @@
 {% extends "news/home.html" %}
-
+{% load social_share %}
 
 {% block content %}
 {% load comments %}
@@ -20,9 +20,13 @@
         <li><h2>{{ news.title }}</h2></li>
         <li><p>{{ news.content }}</p></li>
     </ul>
+    {% post_to_facebook news.news_id %}
+    {% post_to_gplus www.google.com %}
+
+    {% post_to_twitter "News: {{news.title}}. Check it out!" news.news_id "Post to Twitter" %}
+    {% post_to_linkedin news.title news.news_id "Post to LinkedIn" %}
 </div>
     <div class="news_headings"><h2>Comment here</h2></div>
-
     {% if user.is_authenticated %}
     {% get_comment_form for news as form %}
     <div id="comment_form">

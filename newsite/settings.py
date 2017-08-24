@@ -51,7 +51,10 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google'
 
+
+
 ]
+INSTALLED_APPS += ['django_social_share']
 
 
 MIDDLEWARE = [
