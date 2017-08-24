@@ -1,0 +1,106 @@
+
+li a ,li h2{
+    font-family: "Times New Roman", Georgia, Serif;
+}
+ul {
+    list-style-type:none;
+}
+.news_headings {
+    color: black;
+       /* background-color: #f1f1f1;*/
+    padding: 0.01em 16px;
+    margin: 20px 10px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12) !important;
+    border-radius: 23px;
+
+    }
+
+.news_cat {
+              /* background-color: transparent;*/
+    padding: 0.01em 4px;
+    margin: 20px 10px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12) !important;
+    border-radius: 23px;
+      }
+li h2 a, li h2{
+    color :rgba(0,131,143 ,1)
+    }
+li h4 a {
+    color:rgba(2,119,189 ,1);
+    }
+h1 {
+    color: #F1F8E9;
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size:80px;
+    }
+p {
+    font-family: "Times New Roman", Georgia, Serif;
+}
+.head {
+    background: #00796B;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+.search-form .form-group {
+  float: right !important;
+  transition: all 0.35s, border-radius 0s;
+  width: 32px;
+  height: 32px;
+  background-color: #0000;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+}
+.search-form .form-group input.form-control {
+  padding-right: 20px;
+  border: 0 none;
+  background: transparent;
+  box-shadow: none;
+  display:block;
+}
+.search-form .form-group input.form-control::-webkit-input-placeholder {
+  display: none;
+}
+.search-form .form-group input.form-control:-moz-placeholder {
+  /* Firefox 18- */
+  display: none;
+}
+.search-form .form-group input.form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  display: none;
+}
+.search-form .form-group input.form-control:-ms-input-placeholder {
+  display: none;
+}
+.search-form .form-group:hover,
+.search-form .form-group.hover {
+  width: 100%;
+  border-radius: 4px 25px 25px 4px;
+  background: #ffffff;
+}
+.search-form .form-group span.form-control-feedback {
+  position: absolute;
+  top: -1px;
+  right: -2px;
+
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  color: #3596e0;
+  left: initial;
+  font-size: 14px;
+}
+.search-form
+{
+    margin-top:8px;
+}
+
+/*
+
+.bo {
+        background: white url("image/background.gif") ;
+}
+
+
